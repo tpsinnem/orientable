@@ -1,6 +1,8 @@
 import scala.collection.JavaConversions._
 import scala.annotation.target.field
 
+import shapeless._
+
 import com.orientechnologies.orient.`object`.db.OObjectDatabaseTx
 import com.orientechnologies.orient.core.id.ORecordId
 import com.orientechnologies.orient.core.annotation.{OId, OVersion}

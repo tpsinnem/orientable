@@ -80,6 +80,9 @@ import com.orientechnologies.orient.core.annotation.{OId, OVersion}
     record ids work quite as they're supposed to, I won't have proper ids 
     available through any means until the transaction is done.
 
+- It really does look like OVersions and ORecordIds *do not* get initialized 
+  or updated on the POJOs! I will need to do that myself.
+
 - So whichever way I go, it seems to involve temporary objects, be they 
   mutable or immutable. That will make transactions somewhat convoluted, so I 
   will want to have some standard way of managing them.
@@ -90,6 +93,9 @@ import com.orientechnologies.orient.core.annotation.{OId, OVersion}
       'successor objects' as they exist after the transaction.
       - Assuming Map supports different types in a way that makes this 
         possible.
+  - Doing this super cleanly will involve a particular sort of heterogenous 
+    list type which does not seem to exist yet -- i.e. CIList. I guess 
+    there'll be no progress here until that is done.
 */
 
 trait OrientableTransaction[T <: Product] {

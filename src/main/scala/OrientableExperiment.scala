@@ -2,12 +2,12 @@ import scala.reflect.BeanProperty
 
 import com.orientechnologies.orient.core.id.ORecordId
 
-object OrientableExperiment {
+object OrientableExperiment extends App {
 
   def cRUD = {
     lazy val dbOpt = {
       lazy val dbOpt = Option[OrientableDatabaseTx](
-        new OrientableDatabaseTx("local:practiceOrientDb").open("admin","admin") )
+        new OrientableDatabaseTx("local:experimentDb").open("admin","admin") )
       dbOpt map (_.getEntityManager().registerEntityClass(classOf[MutableThing]))
       dbOpt
     }
@@ -128,6 +128,7 @@ object OrientableExperiment {
       output
     } orElse Some("fail")
   } // cRUD
+  println(cRUD getOrElse("really fail"))
 }
 
 abstract class AbstractThing extends OrientableAbstract[AbstractThing] {

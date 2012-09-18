@@ -20,7 +20,7 @@ object PracticeBuild extends Build {
       "com.chuusai" %% "shapeless" % "1.2.2"
     ),
     resolvers ++= Seq(
-      "Sonatype OSS Releases" at "http://oss.sonatype.org/content/repositories/releases/",
+      "Sonatype OSS Releases" at "https://oss.sonatype.org/content/repositories/releases/",
       "Typesafe Repository" at "https://typesafe.artifactoryonline.com/typesafe/releases/",
       "Sonatype groups/public" at "https://oss.sonatype.org/content/groups/public/"
       //"Versant db4o Repository" at "https://source.db4o.com/maven/"
